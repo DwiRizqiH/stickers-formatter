@@ -1,5 +1,5 @@
-import { IRawMetadata, Metadata } from '../../Types'
-import Utils from '../../Utils'
+import { IRawMetadata, Metadata } from '../../Types.js'
+import Utils from '../../Utils.js'
 
 export default class RawMetadata implements IRawMetadata {
     emojis: string[]

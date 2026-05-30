@@ -1,11 +1,11 @@
-import sharp, { fit } from 'sharp'
+import sharp from 'sharp'
 import { writeFile } from 'fs/promises'
 import { tmpdir } from 'os'
-import videoToGif from './videoToGif'
-import crop from './crop'
-import { StickerTypes } from './Metadata/StickerTypes'
-import { defaultBg } from '../Utils'
-import { IStickerOptions } from '..'
+import videoToGif from './videoToGif.js'
+import crop from './crop.js'
+import { StickerTypes } from './Metadata/StickerTypes.js'
+import { defaultBg } from '../Utils.js'
+import { IStickerOptions } from '../Types.js'
 
 const convert = async (
     data: Buffer,
@@ -32,15 +32,15 @@ const convert = async (
 
     switch (type) {
         case StickerTypes.CROPPED:
-            img.resize(512, 512, { fit: fit.cover })
+            img.resize(512, 512, { fit: sharp.fit.cover })
             break
 
         case StickerTypes.FULL:
-            img.resize(512, 512, { fit: fit.contain, background })
+            img.resize(512, 512, { fit: sharp.fit.contain, background })
             break
 
         case StickerTypes.CIRCLE:
-            img.resize(512, 512, { fit: fit.cover }).composite([
+            img.resize(512, 512, { fit: sharp.fit.cover }).composite([
                 {
                     input: Buffer.from(
                         `<svg width="512" height="512"><circle cx="256" cy="256" r="256" fill="${background}"/></svg>`
@@ -53,7 +53,7 @@ const convert = async (
             break
 
         case StickerTypes.ROUNDED:
-            img.resize(512, 512, { fit: fit.cover }).composite([
+            img.resize(512, 512, { fit: sharp.fit.cover }).composite([
                 {
                     input: Buffer.from(
                         `<svg width="512" height="512"><rect rx="50" ry="50" width="512" height="512" fill="${background}"/></svg>`

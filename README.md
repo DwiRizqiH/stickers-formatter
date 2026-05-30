@@ -57,9 +57,9 @@ const buffer = await sticker.toBuffer()
 ## 📥 Import
 
 ```ts
-import { Sticker, createSticker, StickerTypes } from 'stickers-formatter' // ES6
-// const { Sticker, createSticker, StickerTypes } = require('stickers-formatter') // CommonJS
+import { Sticker, createSticker, StickerTypes } from 'stickers-formatter'
 ```
+> This package is ESM-only.
 
 ---
 

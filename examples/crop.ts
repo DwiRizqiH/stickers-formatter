@@ -1,4 +1,4 @@
-import { Sticker } from '../src'
+import { Sticker } from '../src/index.js'
 ;(async () => {
     console.log('\n---\n')
     console.log('Crop example')

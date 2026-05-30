@@ -5,4 +5,10 @@ declare module 'node-webpmux' {
         load(buffer: Buffer | string): Promise<void>
         save(...args: unknown[]): Promise<Buffer>
     }
+
+    const webpmux: {
+        Image: typeof Image
+    }
+
+    export default webpmux
 }

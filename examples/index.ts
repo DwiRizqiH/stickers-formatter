@@ -2,9 +2,9 @@
 /// <reference path='../src/internal/node-webpmux.d.ts' />
 
 (async () => {
-    await import('./default')
-    await import('./crop')
-    await import('./full')
-    await import('./circle')
-    await import('./rounded')
+    await import('./default.js')
+    await import('./crop.js')
+    await import('./full.js')
+    await import('./circle.js')
+    await import('./rounded.js')
 })().catch(console.error)

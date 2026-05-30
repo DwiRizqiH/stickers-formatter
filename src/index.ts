@@ -1,9 +1,9 @@
-import { Sticker } from './Sticker'
+import { Sticker } from './Sticker.js'
 
-export * from './Sticker'
-export * from './extractMetadata'
-export * from './Types'
-export { default as StickerMetadata } from './internal/Metadata/StickerMetadata'
-export { default as Exif } from './internal/Metadata/Exif'
-export * from './internal/Metadata/StickerTypes'
+export * from './Sticker.js'
+export * from './extractMetadata.js'
+export * from './Types.js'
+export { default as StickerMetadata } from './internal/Metadata/StickerMetadata.js'
+export { default as Exif } from './internal/Metadata/Exif.js'
+export * from './internal/Metadata/StickerTypes.js'
 export default Sticker

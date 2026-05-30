@@ -2,8 +2,15 @@
   "name": "stickers-formatter",
   "version": "0.0.2",
   "description": "Sticker Creator for WhatsApp",
-  "main": "dist",
-  "types": "dist",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
   "files": [
     "dist"
   ],
@@ -15,9 +22,9 @@
     "lint": "eslint src/**/*.ts",
     "prepublishOnly": "npm run build",
     "fmt": "prettier --config .prettierrc \"**/*.{ts,mjs}\" --write",
-    "test": "mocha --timeout 60000 -r ts-node/register \"tests/**/*.test.ts\"",
+    "test": "node --loader ts-node/esm ./node_modules/mocha/bin/mocha.js --timeout 60000 \"tests/**/*.test.ts\"",
     "clean:webp": "find ./ -name '*.webp' -delete",
-    "examples": "ts-node ./examples/index.ts"
+    "examples": "node --loader ts-node/esm ./examples/index.ts"
   },
   "keywords": [
     "whatsapp",
