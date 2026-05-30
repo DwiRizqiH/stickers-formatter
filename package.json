@@ -20,6 +20,7 @@
     "doc": "typedoc",
     "doc:publish": "typedoc && git add docs && git commit -m 'docs' && git push",
     "lint": "eslint src/**/*.ts",
+    "prepare": "npm run build",
     "prepublishOnly": "npm run build",
     "fmt": "prettier --config .prettierrc \"**/*.{ts,mjs}\" --write",
     "test": "node --loader ts-node/esm ./node_modules/mocha/bin/mocha.js --timeout 60000 \"tests/**/*.test.ts\"",
