@@ -1,5 +1,5 @@
-import { Categories, IStickerConfig, IStickerOptions } from '../../Types'
-import Utils from '../../Utils'
+import { Categories, IStickerConfig, IStickerOptions } from '../../Types.js'
+import Utils from '../../Utils.js'
 
 export default class StickerMetadata implements IStickerOptions {
     public crop = false

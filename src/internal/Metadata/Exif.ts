@@ -1,6 +1,7 @@
-import { Image } from 'node-webpmux'
-import { Metadata } from '../../Types'
-import RawMetadata from './RawMetadata'
+import webpmux from 'node-webpmux'
+import type { Image as WebpmuxImage } from 'node-webpmux'
+import { Metadata } from '../../Types.js'
+import RawMetadata from './RawMetadata.js'
 
 export default class Exif {
     private data: RawMetadata
@@ -23,10 +24,10 @@ export default class Exif {
         return exif
     }
 
-    add = async (image: string | Buffer | Image): Promise<Buffer> => {
+    add = async (image: string | Buffer | WebpmuxImage): Promise<Buffer> => {
         const exif = this.exif || this.build()
-        if (!(image instanceof Image)) {
-            const img = new Image()
+        if (!(image instanceof webpmux.Image)) {
+            const img = new webpmux.Image()
             await img.load(image)
             image = img
         }
